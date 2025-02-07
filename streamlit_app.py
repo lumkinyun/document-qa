@@ -5,6 +5,12 @@ import os
 
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
+password = os.getenv("PASSWORD")
+
+# add password protection for the streamlit app
+if password != st.text_input("Password", type="password"):
+    st.stop()
+
 
 # Show title and description.
 st.title("📄 Document Chat")
